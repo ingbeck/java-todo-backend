@@ -19,9 +19,20 @@ function Home() {
             .catch((error) => console.log(error.message))
     }
 
+
+
+    function putData(todo:Todo){
+        axios.put("/api/todo/"+todo.id+"/update",{
+            id:todo.id,
+            description:todo.description,
+            status:todo.status
+        })
+            .catch(error => console.log(error.message))
+    }
+
     useEffect(
         fetchData,
-        []
+        [putData]
     )
 
     const openTodos= data.filter((todo) => todo.status=="OPEN")
@@ -33,15 +44,15 @@ function Home() {
             <div className="grid">
                 <div className={"swimmlane"}>
                     <TitleContainer title={"OPEN"}/>
-                    {openTodos.map((todo) => <TodoCard todo={todo}/>)}
+                    {openTodos.map((todo) => <TodoCard todo={todo} updateStatus={putData}/>)}
                 </div>
                 <div className={"swimmlane"}>
                     <TitleContainer title={"DOING"}/>
-                    {doingTodos.map((todo) => <TodoCard todo={todo}/>)}
+                    {doingTodos.map((todo) => <TodoCard todo={todo} updateStatus={putData}/>)}
                 </div>
                 <div className={"swimmlane"}>
                     <TitleContainer title={"DONE"}/>
-                    {doneTodos.map((todo) => <TodoCard todo={todo}/>)}
+                    {doneTodos.map((todo) => <TodoCard todo={todo} updateStatus={putData}/>)}
                 </div>
             </div>
 
