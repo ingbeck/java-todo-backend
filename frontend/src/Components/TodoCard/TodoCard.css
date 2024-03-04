@@ -1,0 +1,29 @@
+.todoCard {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    word-wrap: break-word;
+}
+
+.wrapper {
+    align-self: stretch;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 0 0 16px;
+    border-bottom: solid 2px #8bbff8;
+}
+
+.description {
+    height: 90px;
+    flex-grow: 0;
+    font-size: 12px;
+    text-align: left;
+    color: #000;
+}

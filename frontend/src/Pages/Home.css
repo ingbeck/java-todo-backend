@@ -1,0 +1,15 @@
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 38px;
+    padding: 24px 80px;
+}
+
+.swimmlane{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    grid-gap: 32px;
+}
