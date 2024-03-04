@@ -1,5 +1,5 @@
 import "./HeaderComponent.css"
-import SearchComponent from "./SearchComponent.tsx";
+import SearchbarComponent from "./SearchbarComponent.tsx";
 function HeaderComponent() {
 
     return (
@@ -11,7 +11,7 @@ function HeaderComponent() {
                     <button className="filterbutton">DOING</button>
                     <button className="filterbutton">DONE</button>
                 </div>
-                <SearchComponent/>
+                <SearchbarComponent/>
             </header>
         </>
     )
