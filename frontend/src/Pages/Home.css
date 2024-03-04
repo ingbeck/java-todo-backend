@@ -9,7 +9,10 @@
 .swimmlane{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
     width: 100%;
     grid-gap: 32px;
+}
+
+h3{
+    word-wrap: anywhere;
 }

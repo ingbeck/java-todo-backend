@@ -1,0 +1,30 @@
+.formCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 400px 0px 400px;
+}
+
+h3{
+    word-wrap: anywhere;
+}
+
+.formElement{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    cursor: pointer;
+}
