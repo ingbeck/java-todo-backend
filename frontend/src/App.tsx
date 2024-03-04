@@ -10,6 +10,7 @@ function App() {
         <HeaderComponent/>
         <Routes>
             <Route path={"/"} element={<Home/>}/>
+            <Route path={"Todo/:id"} element={<Todo/>}
         </Routes>
     </>
   )
