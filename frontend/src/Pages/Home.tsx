@@ -3,6 +3,7 @@ import TitleContainer from "../Components/TitleContainer.tsx";
 import TodoCard from "../Components/TodoCard/TodoCard.tsx";
 import {useEffect, useState} from "react";
 import axios from "axios";
+import CreateButton from "../Components/CreateButton.tsx";
 
 type ApiResponse = [
     id:string,
@@ -19,8 +20,6 @@ function Home() {
             .catch((error) => console.log(error.message))
     }
 
-
-
     function putData(todo:Todo){
         axios.put("/api/todo/"+todo.id+"/update",{
             id:todo.id,
@@ -30,9 +29,15 @@ function Home() {
             .catch(error => console.log(error.message))
     }
 
+    function postData(description:string){
+        axios.post("api/todo", {description:description, status:"OPEN"})
+            .catch(error => console.log(error.message))
+    }
+
+
     useEffect(
         fetchData,
-        [putData]
+        [putData, postData]
     )
 
     const openTodos= data.filter((todo) => todo.status=="OPEN")
@@ -44,6 +49,7 @@ function Home() {
             <div className="grid">
                 <div className={"swimmlane"}>
                     <TitleContainer title={"OPEN"}/>
+                    <CreateButton addTodo={postData}/>
                     {openTodos.map((todo) => <TodoCard todo={todo} updateStatus={putData}/>)}
                 </div>
                 <div className={"swimmlane"}>

@@ -35,6 +35,8 @@ function TodoCard(props: Readonly<TodoCardProps>) {
                         <button className={"buttonEdit"} onClick={() => newStatus("DONE")}>DONE</button>}
                     {isHovered && props.todo.status === "DONE" &&
                         <button className={"buttonEdit"} onClick={() => newStatus("IN_PROGRESS")}>DOING</button>}
+                    {isHovered && props.todo.status === "OPEN" &&
+                        <button className={"buttonEdit"} onClick={() => newStatus("IN_PROGRESS")}>DOING</button>}
                 </div>
             </div>
         </>
